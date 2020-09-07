@@ -1,0 +1,51 @@
+**ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz**************************
+**PARASOLID !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~0123456789**************************
+**PART1;
+MC=unknown;
+MC_MODEL=unknown;
+MC_ID=unknown;
+OS=unknown;
+OS_RELEASE=unknown;
+FRU=sdl_parasolid_customer_support;
+APPL=parasolid_acceptance_tests;
+SITE=unknown;
+USER=unknown;
+FORMAT=text;
+GUISE=transmit;
+KEY=E:\Analyses\FSI\ML_data\working\test\2\digimat\job_uni_1_Analysis_uni_1_Phase2_uncut;
+FILE=E:\Analyses\FSI\ML_data\working\test\2\digimat\job_uni_1_Analysis_uni_1_Phase2_uncut.xmt_txt;
+DATE=unknown;
+**PART2;
+SCH=SCH_2700161_26105;
+USFLD_SIZE=1;
+**PART3;
+**END_OF_HEADER*****************************************************************
+T51 : TRANSMIT FILE created by modeller version 270016123 SCH_2700161_26105_1300
+6196 1 12 30 CCCCCCCCCCCCCDI5 owner1040 0 CCCCCCCCCA13 boundary_mesh1006 0 A16 i
+ndex_map_offset0 0 1 dA9 index_map82 0 A17 node_id_index_map82 0 A20 schema_embe
+dding_map82 0 A5 child12 0 A14 lowest_node_id0 0 1 dZ1 19 2 3 0 0 0 0 1e3 1e-8 0
+ 4 0 1 0 1 1 5 6 7 0 8 9 0 0 0 0 0 0 0 0 0 81 255 5 2 19 10 1 0 0 0 0 11 0 12 0
+ 13 0 70 11 CI9 list_type0 0 1 uI10 notransmit0 0 1 lCCCDCCDI12 finger_index0 0
+ 1 dI12 finger_block1012 0 CZ3 0 4 T1 0 0 1 20 1 14 14 0 13 255 5 3 0 1 0 15 0 0
+ 16 0 0 51 255 6 18 0 17 18 0 0 +.5 .04292185026591675 .5 612323399573677e-31 1
+ 612323399573677e-31 .457078149734083 3749399456654645e-48 612323399573677e-31 -
+1 0 31 255 7 16 0 9 19 0 0 +.5 .957078149734083 .5 -612323399573677e-31 -1 -6123
+23399573677e-31 3749399456654645e-48 612323399573677e-31 -1 .457078149734083 0 1
+9 8 CCCCCCCA5 owner12 0 Z8 1 0 1 16 0 20 V0 0 16 255 9 12 0 ?21 0 22 7 0 0 1 0 1
+7 255 21 0 23 21 21 0 24 9 0 0 +0 16 22 6 0 ?25 9 0 19 0 0 1 0 17 25 0 26 25 25
+ 0 27 22 0 0 +0 31 19 10 0 22 0 7 0 +.5 .04292185026591675 .5 612323399573677e-3
+1 1 612323399573677e-31 3749399456654645e-48 612323399573677e-31 -1 .45707814973
+4083 0 15 255 26 7 0 25 17 0 0 17 27 0 28 27 27 0 25 22 0 0 -0 15 28 8 0 27 29 0
+ 0 14 255 29 9 0 ?17 15 28 5 30 +0 0 17 15 20 0 14 17 2 0 ?0 29 23 5 6 +0 0 0 29
+ 20 0 14 15 15 0 ?29 0 31 5 18 +0 0 29 0 20 0 50 255 30 11 0 29 0 18 0 +.5 .0429
+2185026591675 .5 -612323399573677e-31 -1 -612323399573677e-31 -3749399456654645e
+-48 -612323399573677e-31 1 0 13 20 4 0 0 0 0 0 0 8 15 0 50 18 17 0 15 30 6 0 +.5
+ .957078149734083 .5 612323399573677e-31 1 612323399573677e-31 3749399456654645e
+-48 612323399573677e-31 -1 0 15 31 14 0 24 15 0 0 17 24 0 31 24 24 0 21 9 0 0 -0
+ 15 23 13 0 21 17 26 0 19 16 5 0 1 0 8 5 S0 0 74 4 CI16 index_map_offset0 0 1 dC
+CZ20 14 1 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 80 255 5 10 32 33 9000 0
+ 0 0 0 3 5 0 0 34 FFTFFFFFFFFFFF3 3 1 1 2 0 84 255 6 11 Phase20 82 255 1 12 0 0
+ 83 255 3 13 .5 .5 .5 0 79 255 38 33 e-X Digimat-FE geometry identification0 99
+ 255 5 34 35 36 37 38 39 0 84 22 35 e-XDigimatFE_PhaseName0 84 22 36 e-XDigimatF
+E_LayerName0 84 24 37 e-XDigimatFE_InclusionId0 84 27 38 e-XDigimatFE_SubInclusi
+onId0 84 30 39 e-XDigimatFE_InclusionPosition0 1 0 

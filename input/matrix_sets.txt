@@ -1,0 +1,35 @@
+epoxy 
+Em 3.45
+Gm 1.28
+nu_m 0.35
+xc_m 130
+xt_m 90
+sx_m 60
+polyamide
+Em 3.45
+Gm 1.28
+nu_m 0.45
+xc_m 210
+xt_m 120
+sx_m 90
+phenolic
+Em 11
+Gm 4.07
+nu_m 0.35
+xc_m 200
+xt_m 60
+sx_m 80
+polyester
+Em 3
+Gm 1.11
+nu_m 0.35
+xc_m 140
+xt_m 60
+sx_m 50
+nylon
+Em 3.45
+Gm 1.28
+nu_m 0.35
+xc_m 60.7
+xt_m 81.4
+sx_m 66.2

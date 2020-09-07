@@ -1,0 +1,747 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Model(name='Analysis_sh_23')
+mdb.models['Analysis_sh_23'].Material(name='matrix')
+mdb.models['Analysis_sh_23'].materials['matrix'].Density(table=((1100, ), ))
+mdb.models['Analysis_sh_23'].materials['matrix'].Elastic(table=[(5000, 0.35)], 
+    temperatureDependency=OFF, type=ISOTROPIC)
+mdb.models['Analysis_sh_23'].HomogeneousSolidSection(material='matrix', name=
+    'matrix_Section')
+mdb.models['Analysis_sh_23'].Material(name='CF')
+mdb.models['Analysis_sh_23'].materials['CF'].Density(table=((1800, ), ))
+mdb.models['Analysis_sh_23'].materials['CF'].Elastic(table=[(15000, 15000, 
+    230000, 0.2, 0.00456522, 0.00456522, 6250, 15000, 15000)], 
+    temperatureDependency=OFF, type=ENGINEERING_CONSTANTS)
+mdb.models['Analysis_sh_23'].HomogeneousSolidSection(material='CF', name=
+    'CF_Section')
+mdb.openParasolid(
+    'e:\\Analyses\\FSI\\app\\output\\temp_RVE__E_5000\\digimat_sh_23\\aba_scripts/Job_sh_23_Analysis_sh_23_Phase1_uncut.xmt_txt'
+    , topology=SOLID)
+mdb.models['Analysis_sh_23'].PartFromGeometryFile(
+    'Job_sh_23_Analysis_sh_23_Pha~1', mdb.acis, THREE_D, DEFORMABLE_BODY, 
+    scale=0.001)
+mdb.models['Analysis_sh_23'].rootAssembly.Instance(autoOffset=OFF, dependent=ON
+    , name='Job_sh_23_Analysis_sh_23_Pha~1', part=
+    mdb.models['Analysis_sh_23'].parts['Job_sh_23_Analysis_sh_23_Pha~1'])
+mdb.models['Analysis_sh_23'].parts['Job_sh_23_Analysis_sh_23_Pha~1'].queryAttributes(
+    )
+mdb.models['Analysis_sh_23'].parts['Job_sh_23_Analysis_sh_23_Pha~1'].Set(cells=
+    mdb.models['Analysis_sh_23'].parts['Job_sh_23_Analysis_sh_23_Pha~1'].cells, 
+    name='SetJob_sh_23_Analysis_sh_23_Pha~1')
+mdb.models['Analysis_sh_23'].Part(name='Matrix', objectToCopy=
+    mdb.models['Analysis_sh_23'].parts['Job_sh_23_Analysis_sh_23_Pha~1'])
+mdb.models['Analysis_sh_23'].parts['Matrix'].Set(cells=
+    mdb.models['Analysis_sh_23'].parts['Matrix'].cells, name='SetMatrix')
+mdb.models['Analysis_sh_23'].parts['Matrix'].queryGeometry()
+mdb.openParasolid(
+    'e:\\Analyses\\FSI\\app\\output\\temp_RVE__E_5000\\digimat_sh_23\\aba_scripts/Job_sh_23_Analysis_sh_23_Phase2.xmt_txt'
+    , topology=SOLID)
+mdb.models['Analysis_sh_23'].PartFromGeometryFile('Phase2_1', mdb.acis, THREE_D
+    , DEFORMABLE_BODY, bodyNum=1, scale=0.001)
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].queryAttributes()
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].Set(cells=
+    mdb.models['Analysis_sh_23'].parts['Phase2_1'].cells, name='SetPhase2_1')
+mdb.models['Analysis_sh_23'].rootAssembly.Instance(autoOffset=OFF, dependent=ON
+    , name='Phase2_1', part=mdb.models['Analysis_sh_23'].parts['Phase2_1'])
+mdb.models['Analysis_sh_23'].Part(name='Phase2', objectToCopy=
+    mdb.models['Analysis_sh_23'].parts['Phase2_1'])
+mdb.models['Analysis_sh_23'].parts['Phase2'].queryAttributes()
+mdb.models['Analysis_sh_23'].parts['Phase2'].Set(cells=
+    mdb.models['Analysis_sh_23'].parts['Phase2'].cells, name='SetPhase2')
+mdb.models['Analysis_sh_23'].rootAssembly.deleteAllFeatures()
+mdb.models['Analysis_sh_23'].rootAssembly.Instance(autoOffset=OFF, dependent=ON
+    , name='Phase2', part=mdb.models['Analysis_sh_23'].parts['Phase2'])
+mdb.models['Analysis_sh_23'].rootAssembly.Instance(autoOffset=OFF, dependent=ON
+    , name='MatrixInst', part=mdb.models['Analysis_sh_23'].parts['Matrix'])
+mdb.models['Analysis_sh_23'].Part(name='matrixVoidsCut', objectToCopy=
+    mdb.models['Analysis_sh_23'].parts['Matrix'])
+mdb.models['Analysis_sh_23'].rootAssembly.deleteAllFeatures()
+mdb.models['Analysis_sh_23'].rootAssembly.Instance(autoOffset=OFF, dependent=ON
+    , name='MatrixInst', part=
+    mdb.models['Analysis_sh_23'].parts['matrixVoidsCut'])
+mdb.models['Analysis_sh_23'].rootAssembly.Instance(autoOffset=OFF, dependent=ON
+    , name='Phase2', part=mdb.models['Analysis_sh_23'].parts['Phase2'])
+mdb.models['Analysis_sh_23'].rootAssembly.InstanceFromBooleanCut(
+    cuttingInstances=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['Phase2']], 
+    instanceToBeCut=
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'], name=
+    'matrixCut')
+mdb.models['Analysis_sh_23'].rootAssembly.deleteAllFeatures()
+mdb.models['Analysis_sh_23'].rootAssembly.Instance(autoOffset=OFF, dependent=ON
+    , name='MatrixInst', part=mdb.models['Analysis_sh_23'].parts['matrixCut'])
+mdb.models['Analysis_sh_23'].rootAssembly.Instance(autoOffset=OFF, dependent=ON
+    , name='Phase2_1', part=mdb.models['Analysis_sh_23'].parts['Phase2_1'])
+mdb.models['Analysis_sh_23'].rootAssembly.Surface(name='Surf_Phase2_1', 
+    side1Faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['Phase2_1'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['Phase2_1'].faces.getSequenceFromMask(
+    mask=('[#2 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['Phase2_1'].faces.getSequenceFromMask(
+    mask=('[#4 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Surface(name='Matrix_1', side1Faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#40 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#100 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#80 ]', ), )])
+mdb.models['Analysis_sh_23'].Tie(adjust=ON, constraintEnforcement=
+    SURFACE_TO_SURFACE, master=
+    mdb.models['Analysis_sh_23'].rootAssembly.surfaces['Matrix_1'], name='Tie1'
+    , positionToleranceMethod=COMPUTED, slave=
+    mdb.models['Analysis_sh_23'].rootAssembly.surfaces['Surf_Phase2_1'], 
+    thickness=ON)
+mdb.models['Analysis_sh_23'].rootAssembly.Set(cells=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['Phase2_1'].cells.getSequenceFromMask(
+    mask=('[#1 ]', ), )], name='Phase2')
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].DatumCsysByThreePoints(
+    coordSysType=CARTESIAN, name='Phase2_1CSYS', origin=(0, 0, 0), point1=(
+    3.7494e-33, 6.12323e-17, -1), point2=(-1, 6.12323e-17, 0))
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].MaterialOrientation(localCsys=
+    mdb.models['Analysis_sh_23'].parts['Phase2_1'].datums[3], orientationType=
+    SYSTEM, region=
+    mdb.models['Analysis_sh_23'].parts['Phase2_1'].sets['SetPhase2_1'])
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].SectionAssignment(offset=0.0, 
+    region=mdb.models['Analysis_sh_23'].parts['Phase2_1'].sets['SetPhase2_1'], 
+    sectionName='CF_Section')
+mdb.models['Analysis_sh_23'].parts['matrixCut'].SectionAssignment(offset=0.0, 
+    region=
+    mdb.models['Analysis_sh_23'].parts['matrixCut'].sets['SetJob_sh_23_Analysis_sh_23_Pha~1']
+    , sectionName='matrix_Section')
+mdb.models['Analysis_sh_23'].rootAssembly.regenerate()
+mdb.models['Analysis_sh_23'].rootAssembly.Set(cells=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].cells.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['Phase2_1'].cells.getSequenceFromMask(
+    mask=('[#1 ]', ), )], name='allRVE')
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#20 ]', ), )], name='xsup', xEdges=[], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#8 ]', ), )], name='ysup', xEdges=[], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )], name='zsup', xEdges=[], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#4 ]', ), )], name='xinf', xEdges=[], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#2 ]', ), )], name='yinf', xEdges=[], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#10 ]', ), )], name='zinf', xEdges=[], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#20 ]', ), )], name='xsupNoEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#200 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#10 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#2 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#800 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#8 ]', ), )], name='ysupNoEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#4 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#400 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#80 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#200 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )], name='zsupNoEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#4 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#8 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#2 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#4 ]', ), )], name='xinfNoEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#80 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#20 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#100 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#8 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#2 ]', ), )], name='yinfNoEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#40 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#20 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#10 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#10 ]', ), )], name='zinfNoEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#100 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#800 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#40 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#400 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#8 ]', ), )], name='ysupNoXEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#4 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#400 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#8 ]', ), )], name='ysupNoZEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#80 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#200 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )], name='zsupNoXEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#4 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )], name='zsupNoYEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#8 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#2 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#2 ]', ), )], name='yinfNoXEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#40 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#2 ]', ), )], name='yinfNoZEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#20 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#10 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#10 ]', ), )], name='zinfNoXEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#40 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#400 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#10 ]', ), )], name='zinfNoYEdges', xEdges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#100 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#800 ]', ), )], xVertices=[])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='point1', vertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#20 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='point2', vertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='point3', vertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#8 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='point4', vertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#40 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='point5', vertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#10 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='point6', vertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#2 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='point7', vertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#4 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='point8', vertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#80 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#20 ]', ), )], name='xsupNoCorner', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#10 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#2 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#4 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#80 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#8 ]', ), )], name='ysupNoCorner', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#8 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#40 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#4 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#80 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )], name='zsupNoCorner', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#8 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#2 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#4 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#4 ]', ), )], name='xinfNoCorner', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#20 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#8 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#40 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#2 ]', ), )], name='yinfNoCorner', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#20 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#10 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#2 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(faces=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].faces.getSequenceFromMask(
+    mask=('[#10 ]', ), )], name='zinfNoCorner', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#20 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#40 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#10 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#80 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#40 ]', ), )], name='xparEdge1', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#10 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#20 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), )], name='xparEdge2', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#2 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#4 ]', ), )], name='xparEdge3', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#4 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#8 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#400 ]', ), )], name='xparEdge4', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#80 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#40 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#800 ]', ), )], name='yparEdge1', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#10 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#80 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#100 ]', ), )], name='yparEdge2', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#20 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#40 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#8 ]', ), )], name='yparEdge3', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#8 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#2 ]', ), )], name='yparEdge4', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#2 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#4 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#80 ]', ), )], name='zparEdge1', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#40 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#8 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#20 ]', ), )], name='zparEdge2', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#20 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#10 ]', ), )], name='zparEdge3', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#10 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#2 ]', ), )])
+mdb.models['Analysis_sh_23'].rootAssembly.Set(edges=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].edges.getSequenceFromMask(
+    mask=('[#200 ]', ), )], name='zparEdge4', xVertices=
+    [mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#80 ]', ), ), 
+    mdb.models['Analysis_sh_23'].rootAssembly.instances['MatrixInst'].vertices.getSequenceFromMask(
+    mask=('[#4 ]', ), )])
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].setMeshControls(allowMapped=True
+    , elemShape=TET, regions=
+    mdb.models['Analysis_sh_23'].parts['Phase2_1'].cells, sizeGrowth=MAXIMUM, 
+    technique=FREE)
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].setElementType(elemTypes=
+    [ElemType(elemCode=C3D10M, elemLibrary=STANDARD)], regions=(
+    mdb.models['Analysis_sh_23'].parts['Phase2_1'].cells.getSequenceFromMask(
+    mask=('[#1 ]', ), ), ))
+mdb.models['Analysis_sh_23'].parts['matrixCut'].setMeshControls(allowMapped=
+    True, elemShape=TET, regions=
+    mdb.models['Analysis_sh_23'].parts['matrixCut'].cells, sizeGrowth=MAXIMUM, 
+    technique=FREE)
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].seedPart(deviationFactor=0.07, 
+    minSizeFactor=0.1, size=0.05)
+mdb.models['Analysis_sh_23'].parts['matrixCut'].seedPart(deviationFactor=0.07, 
+    minSizeFactor=0.1, size=0.05)
+mdb.models['Analysis_sh_23'].parts['Phase2_1'].generateMesh(
+    seedConstraintOverride=ON)
+mdb.models['Analysis_sh_23'].parts['matrixCut'].generateMesh(
+    seedConstraintOverride=ON)
+mdb.models['Analysis_sh_23'].StaticStep(initialInc=1, maxInc=1, maxNumInc=2, 
+    minInc=0.1, name='Step-1', nlgeom=OFF, previous='Initial', timePeriod=1)
+mdb.models['Analysis_sh_23'].fieldOutputRequests['F-Output-1'].setValues(
+    frequency=1, variables=('S', 'U', 'RF', 'EVOL', 'IVOL', 'E'))
+mdb.models['Analysis_sh_23'].rootAssembly.ReferencePoint(point=(1.1, 0.5, 0.5))
+mdb.models['Analysis_sh_23'].rootAssembly.ReferencePoint(point=(0.5, 1.1, 0.5))
+mdb.models['Analysis_sh_23'].rootAssembly.ReferencePoint(point=(0.5, 0.5, 1.1))
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='refpoint4', 
+    referencePoints=(
+    mdb.models['Analysis_sh_23'].rootAssembly.referencePoints[69], ))
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='refpoint5', 
+    referencePoints=(
+    mdb.models['Analysis_sh_23'].rootAssembly.referencePoints[70], ))
+mdb.models['Analysis_sh_23'].rootAssembly.Set(name='refpoint6', 
+    referencePoints=(
+    mdb.models['Analysis_sh_23'].rootAssembly.referencePoints[71], ))
+mdb.models['Analysis_sh_23'].DisplacementBC(createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-1', 
+    region=mdb.models['Analysis_sh_23'].rootAssembly.sets['point1'], u1=SET, 
+    u2=SET, u3=SET, ur1=SET, ur2=SET, ur3=SET)
+mdb.models['Analysis_sh_23'].Equation(name='Eq1', terms=((1.0, 'point2', 1), (
+    -1.0, 'point3', 1), (1.0, 'refpoint5', 1)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq2', terms=((1.0, 'point3', 1), (
+    -1.0, 'point4', 1), (-1.0, 'refpoint6', 1)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq3', terms=((1.0, 'point4', 1), (
+    -1.0, 'point8', 1), (1.0, 'refpoint4', 1)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq4', terms=((1.0, 'point8', 1), (
+    -1.0, 'point5', 1), (-1.0, 'refpoint5', 1)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq5', terms=((1.0, 'point5', 1), (
+    -1.0, 'point6', 1), (1.0, 'refpoint6', 1)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq6', terms=((1.0, 'point6', 1), (
+    -1.0, 'point7', 1), (1.0, 'refpoint5', 1)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq7', terms=((1.0, 'point7', 1), (
+    -1.0, 'point1', 1), (-1.0, 'refpoint4', 1), (-1.0, 'refpoint5', 1), (-1.0, 
+    'refpoint6', 1)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq8', terms=((1.0, 'point2', 2), (
+    -1.0, 'point3', 2), (1.0, 'refpoint5', 2)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq9', terms=((1.0, 'point3', 2), (
+    -1.0, 'point4', 2), (-1.0, 'refpoint6', 2)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq10', terms=((1.0, 'point4', 2), (
+    -1.0, 'point8', 2), (1.0, 'refpoint4', 2)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq11', terms=((1.0, 'point8', 2), (
+    -1.0, 'point5', 2), (-1.0, 'refpoint5', 2)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq12', terms=((1.0, 'point5', 2), (
+    -1.0, 'point6', 2), (1.0, 'refpoint6', 2)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq13', terms=((1.0, 'point6', 2), (
+    -1.0, 'point7', 2), (1.0, 'refpoint5', 2)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq14', terms=((1.0, 'point7', 2), (
+    -1.0, 'point1', 2), (-1.0, 'refpoint4', 2), (-1.0, 'refpoint5', 2), (-1.0, 
+    'refpoint6', 2)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq15', terms=((1.0, 'point2', 3), (
+    -1.0, 'point3', 3), (1.0, 'refpoint5', 3)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq16', terms=((1.0, 'point3', 3), (
+    -1.0, 'point4', 3), (-1.0, 'refpoint6', 3)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq17', terms=((1.0, 'point4', 3), (
+    -1.0, 'point8', 3), (1.0, 'refpoint4', 3)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq18', terms=((1.0, 'point8', 3), (
+    -1.0, 'point5', 3), (-1.0, 'refpoint5', 3)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq19', terms=((1.0, 'point5', 3), (
+    -1.0, 'point6', 3), (1.0, 'refpoint6', 3)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq20', terms=((1.0, 'point6', 3), (
+    -1.0, 'point7', 3), (1.0, 'refpoint5', 3)))
+mdb.models['Analysis_sh_23'].Equation(name='Eq21', terms=((1.0, 'point7', 3), (
+    -1.0, 'point1', 3), (-1.0, 'refpoint4', 3), (-1.0, 'refpoint5', 3), (-1.0, 
+    'refpoint6', 3)))
+mdb.models['Analysis_sh_23'].DisplacementBC(amplitude=UNSET, createStepName=
+    'Step-1', distributionType=UNIFORM, fieldName='', localCsys=None, name=
+    'BC-3', region=mdb.models['Analysis_sh_23'].rootAssembly.sets['refpoint4'], 
+    u2=0)
+mdb.models['Analysis_sh_23'].DisplacementBC(amplitude=UNSET, createStepName=
+    'Step-1', distributionType=UNIFORM, fieldName='', localCsys=None, name=
+    'BC-7', region=mdb.models['Analysis_sh_23'].rootAssembly.sets['refpoint5'], 
+    u3=0)
+mdb.models['Analysis_sh_23'].DisplacementBC(amplitude=UNSET, createStepName=
+    'Step-1', distributionType=UNIFORM, fieldName='', localCsys=None, name=
+    'BC-8', region=mdb.models['Analysis_sh_23'].rootAssembly.sets['refpoint6'], 
+    u1=0)
+mdb.models['Analysis_sh_23'].DisplacementBC(createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-9', 
+    region=mdb.models['Analysis_sh_23'].rootAssembly.sets['refpoint6'], u2=
+    0.03)
+mdb.Job(contactPrint=OFF, description='', echoPrint=OFF, explicitPrecision=
+    SINGLE, historyPrint=OFF, model='Analysis_sh_23', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job_Analysis_sh_23', 
+    nodalOutputPrecision=SINGLE, numCpus=1, numDomains=1, 
+    parallelizationMethodExplicit=DOMAIN, scratch='', type=ANALYSIS, 
+    userSubroutine='')
+mdb.models['Analysis_sh_23'].setValues(noPartsInputFile=ON)
+mdb.models['Analysis_sh_23'].keywordBlock.synchVersions(storeNodesAndElements=
+    False)
+mdb.models['Analysis_sh_23'].keywordBlock.insert(166, 
+    '*ncopy, change number = 26627, old set=xsupNoEdges, new set=xsupCopy, reflect=mirror\n0.5, 0, 0, 0.5, 1.0, 0\n0.5, 0, 1.0 ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(167, 
+    '*ncopy, change number = 53254, old set=ysupNoEdges, new set=ysupCopy, reflect=mirror\n0, 0.5, 0, 1.0, 0.5, 0\n0, 0.5, 1.0 ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(168, 
+    '*ncopy, change number = 79881, old set=zsupNoEdges, new set=zsupCopy, reflect=mirror\n0, 0, 0.5, 1.0, 0, 0.5\n0, 1.0, 0.5 ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(169, 
+    '*ncopy, change number = 106508, old set=yparEdge1, new set=yparEdge1CopyTo2, reflect=mirror\n0.5, 0, 0, 0.5, 1.0, 0\n0.5, 0, 1.0')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(170, 
+    '*ncopy, change number = 133135, old set=yparEdge4, new set=yparEdge4CopyTo3, reflect=mirror\n0.5, 0, 0, 0.5, 1.0, 0\n0.5, 0, 1.0')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(171, 
+    '*ncopy, change number = 159762, old set=zparEdge3, new set=zparEdge3CopyTo2, reflect=mirror\n0.5, 0, 0, 0.5, 1.0, 0\n0.5, 0, 1.0')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(172, 
+    '*ncopy, change number = 186389, old set=zparEdge4, new set=zparEdge4CopyTo1, reflect=mirror\n0.5, 0, 0, 0.5, 1.0, 0\n0.5, 0, 1.0')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(173, 
+    '*ncopy, change number = 213016, old set=xparEdge3, new set=xparEdge3CopyTo2, reflect=mirror\n0, 0.5, 0, 1.0, 0.5, 0\n0, 0.5, 1.0 ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(174, 
+    '*ncopy, change number = 239643, old set=xparEdge4, new set=xparEdge4CopyTo1, reflect=mirror\n0, 0.5, 0, 1.0, 0.5, 0\n0, 0.5, 1.0')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(175, 
+    '*ncopy, change number = 266270, old set=zparEdge1, new set=zparEdge1CopyTo2, reflect=mirror\n0, 0.5, 0, 1.0, 0.5, 0\n0, 0.5, 1.0')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(176, 
+    '*ncopy, change number = 292897, old set=zparEdge4, new set=zparEdge4CopyTo3, reflect=mirror\n0, 0.5, 0, 1.0, 0.5, 0\n0, 0.5, 1.0')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(177, 
+    '*ncopy, change number = 319524, old set=yparEdge3, new set=yparEdge3CopyTo2, reflect=mirror\n0, 0, 0.5, 1.0, 0, 0.5\n0, 1.0, 0.5 ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(178, 
+    '*ncopy, change number = 346151, old set=yparEdge4, new set=yparEdge4CopyTo1, reflect=mirror\n0, 0, 0.5, 1.0, 0, 0.5\n0, 1.0, 0.5 ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(179, 
+    '*ncopy, change number = 372778, old set=xparEdge2, new set=xparEdge2CopyTo1, reflect=mirror\n0, 0, 0.5, 1.0, 0, 0.5\n0, 1.0, 0.5 ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(180, 
+    '*ncopy, change number = 399405, old set=xparEdge4, new set=xparEdge4CopyTo3, reflect=mirror\n0, 0, 0.5, 1.0, 0, 0.5\n0, 1.0, 0.5 ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(181, 
+    '*surface, name=copySurfXinf, type=node\nxsupCopy  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(182, 
+    '*surface, name=surfXinf, type=node\nxinfNoEdges  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(183, 
+    '*surface, name=copySurfYinf, type=node\nysupCopy  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(184, 
+    '*surface, name=surfYinf, type=node\nyinfNoEdges  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(185, 
+    '*surface, name=copySurfZinf, type=node\nzsupCopy  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(186, 
+    '*surface, name=surfZinf, type=node\nzinfNoEdges  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(187, 
+    '*surface, name=surfxparEdge1, type=node\nxparEdge1  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(188, 
+    '*surface, name=surfxparEdge2, type=node\nxparEdge2  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(189, 
+    '*surface, name=surfxparEdge3, type=node\nxparEdge3  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(190, 
+    '*surface, name=surfxparEdge4, type=node\nxparEdge4  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(191, 
+    '*surface, name=surfxparEdge3CopyTo2, type=node\nxparEdge3CopyTo2  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(192, 
+    '*surface, name=surfxparEdge4CopyTo1, type=node\nxparEdge4CopyTo1  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(193, 
+    '*surface, name=surfxparEdge2CopyTo1, type=node\nxparEdge2CopyTo1  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(194, 
+    '*surface, name=surfxparEdge4CopyTo3, type=node\nxparEdge4CopyTo3  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(195, 
+    '*surface, name=surfyparEdge1, type=node\nyparEdge1  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(196, 
+    '*surface, name=surfyparEdge2, type=node\nyparEdge2  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(197, 
+    '*surface, name=surfyparEdge3, type=node\nyparEdge3  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(198, 
+    '*surface, name=surfyparEdge4, type=node\nyparEdge4  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(199, 
+    '*surface, name=surfyparEdge1CopyTo2, type=node\nyparEdge1CopyTo2  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(200, 
+    '*surface, name=surfyparEdge4CopyTo3, type=node\nyparEdge4CopyTo3  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(201, 
+    '*surface, name=surfyparEdge3CopyTo2, type=node\nyparEdge3CopyTo2  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(202, 
+    '*surface, name=surfyparEdge4CopyTo1, type=node\nyparEdge4CopyTo1  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(203, 
+    '*surface, name=surfzparEdge1, type=node\nzparEdge1  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(204, 
+    '*surface, name=surfzparEdge2, type=node\nzparEdge2  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(205, 
+    '*surface, name=surfzparEdge3, type=node\nzparEdge3  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(206, 
+    '*surface, name=surfzparEdge4, type=node\nzparEdge4  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(207, 
+    '*surface, name=surfzparEdge3CopyTo2, type=node\nzparEdge3CopyTo2  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(208, 
+    '*surface, name=surfzparEdge4CopyTo1, type=node\nzparEdge4CopyTo1  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(209, 
+    '*surface, name=surfzparEdge1CopyTo2, type=node\nzparEdge1CopyTo2  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(210, 
+    '*surface, name=surfzparEdge4CopyTo3, type=node\nzparEdge4CopyTo3  ')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(211, 
+    '*Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE\ncopySurfXinf,surfXinf')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(212, 
+    '*Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE\ncopySurfYinf,surfYinf')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(213, 
+    '*Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE\ncopySurfZinf,surfZinf')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(214, 
+    '*Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE\nsurfxparEdge3CopyTo2, surfxparEdge2')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(215, 
+    '*Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE\nsurfxparEdge4CopyTo1, surfxparEdge1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(216, 
+    '*Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE\nsurfxparEdge2CopyTo1, surfxparEdge1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(217, 
+    '*Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE\nsurfxparEdge4CopyTo3, surfxparEdge3')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(218, 
+    '*Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE\nsurfyparEdge1CopyTo2, surfyparEdge2')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(219, 
+    '*Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE\nsurfyparEdge4CopyTo3, surfyparEdge3')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(220, 
+    '*Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE\nsurfyparEdge3CopyTo2, surfyparEdge2')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(221, 
+    '*Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE\nsurfyparEdge4CopyTo1, surfyparEdge1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(222, 
+    '*Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE\nsurfzparEdge3CopyTo2, surfzparEdge2')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(223, 
+    '*Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE\nsurfzparEdge4CopyTo1, surfzparEdge1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(224, 
+    '*Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE\nsurfzparEdge1CopyTo2, surfzparEdge2')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(225, 
+    '*Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE\nsurfzparEdge4CopyTo3, surfzparEdge3')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(226, 
+    '*Equation\n3\nxsupNoEdges, 1, 1\nxsupCopy,1, -1\nrefpoint4, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(227, 
+    '*Equation\n3\nysupNoEdges, 1, 1\nysupCopy,1, -1\nrefpoint5, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(228, 
+    '*Equation\n3\nzsupNoEdges, 1, 1\nzsupCopy,1, -1\nrefpoint6, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(229, 
+    '*Equation\n3\nxsupNoEdges, 2, 1\nxsupCopy,2, -1\nrefpoint4, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(230, 
+    '*Equation\n3\nysupNoEdges, 2, 1\nysupCopy,2, -1\nrefpoint5, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(231, 
+    '*Equation\n3\nzsupNoEdges, 2, 1\nzsupCopy,2, -1\nrefpoint6, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(232, 
+    '*Equation\n3\nxsupNoEdges, 3, 1\nxsupCopy,3, -1\nrefpoint4, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(233, 
+    '*Equation\n3\nysupNoEdges, 3, 1\nysupCopy,3, -1\nrefpoint5, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(234, 
+    '*Equation\n3\nzsupNoEdges, 3, 1\nzsupCopy,3, -1\nrefpoint6, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(235, 
+    '*Equation\n3\nxparEdge2, 1, 1\nxparEdge2CopyTo1,1, -1\nrefpoint6, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(236, 
+    '*Equation\n3\nxparEdge3, 1, 1\nxparEdge3CopyTo2,1, -1\nrefpoint5, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(237, 
+    '*Equation\n3\nxparEdge4, 1, 1\nxparEdge4CopyTo3,1, -1\nrefpoint6, 1, 1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(238, 
+    '*Equation\n3\nxparEdge2, 2, 1\nxparEdge2CopyTo1,2, -1\nrefpoint6, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(239, 
+    '*Equation\n3\nxparEdge3, 2, 1\nxparEdge3CopyTo2,2, -1\nrefpoint5, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(240, 
+    '*Equation\n3\nxparEdge4, 2, 1\nxparEdge4CopyTo3,2, -1\nrefpoint6, 2, 1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(241, 
+    '*Equation\n3\nxparEdge2, 3, 1\nxparEdge2CopyTo1,3, -1\nrefpoint6, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(242, 
+    '*Equation\n3\nxparEdge3, 3, 1\nxparEdge3CopyTo2,3, -1\nrefpoint5, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(243, 
+    '*Equation\n3\nxparEdge4, 3, 1\nxparEdge4CopyTo3,3, -1\nrefpoint6, 3, 1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(244, 
+    '*Equation\n3\nyparEdge1, 1, 1\nyparEdge1CopyTo2,1, -1\nrefpoint4, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(245, 
+    '*Equation\n3\nyparEdge3, 1, 1\nyparEdge3CopyTo2,1, -1\nrefpoint6, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(246, 
+    '*Equation\n3\nyparEdge4, 1, 1\nyparEdge4CopyTo3,1, -1\nrefpoint4, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(247, 
+    '*Equation\n3\nyparEdge1, 2, 1\nyparEdge1CopyTo2,2, -1\nrefpoint4, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(248, 
+    '*Equation\n3\nyparEdge3, 2, 1\nyparEdge3CopyTo2,2, -1\nrefpoint6, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(249, 
+    '*Equation\n3\nyparEdge4, 2, 1\nyparEdge4CopyTo3,2, -1\nrefpoint4, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(250, 
+    '*Equation\n3\nyparEdge1, 3, 1\nyparEdge1CopyTo2,3, -1\nrefpoint4, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(251, 
+    '*Equation\n3\nyparEdge3, 3, 1\nyparEdge3CopyTo2,3, -1\nrefpoint6, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(252, 
+    '*Equation\n3\nyparEdge4, 3, 1\nyparEdge4CopyTo3,3, -1\nrefpoint4, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(253, 
+    '*Equation\n3\nzparEdge1, 1, 1\nzparEdge1CopyTo2,1, -1\nrefpoint5, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(254, 
+    '*Equation\n3\nzparEdge3, 1, 1\nzparEdge3CopyTo2,1, -1\nrefpoint4, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(255, 
+    '*Equation\n3\nzparEdge4, 1, 1\nzparEdge4CopyTo3,1, -1\nrefpoint5, 1, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(256, 
+    '*Equation\n3\nzparEdge1, 2, 1\nzparEdge1CopyTo2,2, -1\nrefpoint5, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(257, 
+    '*Equation\n3\nzparEdge3, 2, 1\nzparEdge3CopyTo2,2, -1\nrefpoint4, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(258, 
+    '*Equation\n3\nzparEdge4, 2, 1\nzparEdge4CopyTo3,2, -1\nrefpoint5, 2, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(259, 
+    '*Equation\n3\nzparEdge1, 3, 1\nzparEdge1CopyTo2,3, -1\nrefpoint5, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(260, 
+    '*Equation\n3\nzparEdge3, 3, 1\nzparEdge3CopyTo2,3, -1\nrefpoint4, 3, -1')
+mdb.models['Analysis_sh_23'].keywordBlock.insert(261, 
+    '*Equation\n3\nzparEdge4, 3, 1\nzparEdge4CopyTo3,3, -1\nrefpoint5, 3, -1')
+# Save by admin on 2020_08_31-22.53.49; build 6.14-1 2014_06_04-18.11.02 134264

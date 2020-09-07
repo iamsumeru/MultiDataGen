@@ -1,0 +1,53 @@
+# -*- coding: mbcs -*-
+#
+# Abaqus/CAE Release 6.14-1 replay file
+# Internal Version: 2014_06_04-18.11.02 134264
+# Run by admin on Mon Aug 31 22:46:00 2020
+#
+
+# from driverUtils import executeOnCaeGraphicsStartup
+# executeOnCaeGraphicsStartup()
+#: Executing "onCaeGraphicsStartup()" in the site directory ...
+from abaqus import *
+from abaqusConstants import *
+session.Viewport(name='Viewport: 1', origin=(1.32552, 1.32407), width=195.117, 
+    height=131.348)
+session.viewports['Viewport: 1'].makeCurrent()
+from driverUtils import executeOnCaeStartup
+executeOnCaeStartup()
+execfile('Job_uni_2_Analysis_uni_2_mdbGenerator.py', __main__.__dict__)
+#: e:\Analyses\FSI\app\output\temp_RVE__E_4000\digimat_uni_2\aba_scripts\Job_uni_2_Analysis_uni_2_mdbGenerator.py
+#: A new model database has been created.
+#: The model "Model-1" has been created.
+session.viewports['Viewport: 1'].setValues(displayedObject=None)
+#: The model "Analysis_uni_2" has been created.
+#: Importing matrix phase 1
+#: 
+#: Part: "Job_uni_2_Analysis_uni_2_Pha~1",  Modeling space: 3D,  Type: Deformable
+#: 
+#: Part name is Matrix, dimensionality is 3D, type is Deformable Body.
+#: Bounding box
+#: Min   : 0., 0., 0.
+#: Max   : 1., 1., 1.
+#: CofG  : 500.E-03, 500.E-03, 500.E-03
+#: Volume: 1
+#: Importing phase 1
+#: 1
+#: Importing inclusion 1 in phase Phase2
+#: Phase2_1
+#: 
+#: Part: "Phase2_1",  Modeling space: 3D,  Type: Deformable
+#: 
+#: Part: "Phase2",  Modeling space: 3D,  Type: Deformable
+#: The model database has been saved to "e:\Analyses\FSI\app\output\temp_RVE__E_4000\digimat_uni_2\aba_scripts\Analysis_uni_2.cae".
+#: ********************
+#: *Meshing parameters*
+#: ********************
+#: Element shape: Quadratic tetrahedron (C3D10M)
+#: Element size growth: Moderate
+#: Use mapped tri meshing on bounding faces
+#: Initial seed size: 0.05
+#: Mesh quality indicators:
+#: Number of elements with analysis warnings: 1
+print 'RT script done'
+#: RT script done

@@ -1,0 +1,116 @@
+
+# DIGIMAT FE INFO : DIGIMAT FE Log file - 21/08/2020  14:02:18
+#*********************************************************************#
+#                            Digimat-FE                               #
+#                         Version 2017.0                            #
+#                       (Revision : svn-r17131)                       #
+#                          (EXLM licensing)                           #
+#                    By: MSC Software Belgium SA                      #
+#            Axis Park-Building H, 9, Rue Emile Francqui,             #
+#                 B-1435 Mont-Saint-Guibert, Belgium                  #
+#        Copyright (C)  MSC Software Belgium SA 2003-2016             #
+# WARNING: This computer program is protected by copyright law and    #
+# international treaties. Unauthorized reproduction or distribution   #
+# of this program, or any portion of it, may result in legal actions. #
+#*********************************************************************#
+#                          (EXLM licensing)                           #
+
+
+
+#
+GLOBAL_SETTINGS
+#
+
+allow_interpenetration = no
+allow_coating_interpenetration = no
+favor_orientation_over_fraction = no
+minimum_relative_distance_wrt_diameter = 0.05
+minimum_relative_vol = 0.05
+max_number_of_tests = 2000
+
+#
+PHASE
+#
+
+name = Phase1
+type = matrix
+
+#
+PHASE
+#
+
+name = Phase2
+type = inclusion_fe
+volume_fraction = 0.6
+inclusion_shape = cylinder
+aspect_ratio = 1
+phase_definition = by_number
+number_of_inclusions = 1
+orientation = tensor
+orientation_11 = 0
+orientation_22 = 1
+orientation_33 = 0
+orientation_12 = 0
+orientation_13 = 0
+orientation_23 = 0
+closure = orthotropic
+coated = no
+clustering = no
+allow_size_reduction = no
+track_percolation_onset = no
+stop_at_percolation = no
+check_final_percolation = no
+position = 0.5 ; 0.5 ; 0.5
+
+#
+MICROSTRUCTURE
+#
+
+name = Microstructure1
+phase = Phase1
+phase = Phase2
+
+#
+RVE
+#
+
+type = classical
+
+#
+ANALYSISFE
+#
+
+name = Analysis_sh_13
+size_rve = 1
+periodic = yes
+generate_matrix = no
+random_seed = 185866698
+
+
+
+
+# DIGIMAT FE INFO : Checking out license ... 
+
+# DIGIMAT FE INFO : Using EXLM_LICENSE_FILE=C:\digimat 2017
+# licence\EXLM_SSQ.dat;C:\digimat 2017 licence\EXLM_SSQ.dat as license file
+# location.
+
+# DIGIMAT FE INFO : License check out successful
+Starting generation of inclusion phase Phase2...
+
+Inclusion nb 1 in phase Phase2
+Number of tests for this inclusion : 1
+Current phase volume fraction : 0.6
+Total time for generation of this phase : 0 seconds
+Total time for generation of inclusion phases : 0 seconds
+Total time for computing matrix phase : 0 seconds
+
+Volume fractions reached :
+Phase Phase2 : 0.6 with 1 inclusions (reference: 0.6)
+
+
+# DIGIMAT FE INFO : DIGIMATFE ANALYSIS COMPLETED
+
+
+# DIGIMAT FE INFO : Total time for computing RVE : 0 seconds
+

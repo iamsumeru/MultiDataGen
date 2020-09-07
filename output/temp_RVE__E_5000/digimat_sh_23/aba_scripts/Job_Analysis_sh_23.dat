@@ -1,0 +1,1019 @@
+1
+
+   Abaqus 6.14-1                                  Date 31-Aug-2020   Time 22:53:55
+   For use by Supplied By SSQ under license from Dassault Systemes or its subsidiary.
+
+
+
+                         The Abaqus Software is a product of:
+
+                           Dassault Systemes Simulia Corp.
+                                 Rising Sun Mills
+                                 166 Valley Street
+                           Providence, RI 02909-2499, USA
+ 
+
+
+                   The Abaqus Software is available only under license
+                   from Dassault Systemes or its subsidiary and may be
+                   used or reproduced only in accordance with the terms
+                   of such license.
+ 
+                          On machine DESKTOP-65D18RS 
+                          you are authorized to run
+                          Abaqus/Standard until 31-Dec-2055
+
+                          Your site id is:  
+
+
+ 
+                    For assistance or any other information you may
+                    obtain contact information for your local office
+                    from the world wide web at:
+
+                      http://www.3ds.com/products/simulia/locations/
+
+ 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+                *                                                         * 
+                *                   *****************                     * 
+                *                   *  N O T I C E  *                     * 
+                *                   *****************                     * 
+                *                                                         * 
+                *                                                         * 
+                *                    Abaqus 6.14-1                        * 
+                *                                                         * 
+                *          BUILD ID: 2014_06_04-18.11.02 134264           * 
+                *                                                         * 
+                *                                                         * 
+                *  Please make sure you are using release 6.14 manuals    * 
+                *  plus the notes accompanying this release.              * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                *                                                         * 
+                * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
+ 
+
+
+
+     PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   *******************************************************
+
+
+     END PROCESSING PART, INSTANCE, AND ASSEMBLY INFORMATION
+   ***********************************************************
+
+
+
+
+     OPTIONS BEING PROCESSED
+   ***************************
+
+
+  *Heading
+  *Node
+  *Element, type=C3D4
+  *Nset, nset=MatrixInst_SetJob_sh_23_Analysis_sh_23_Pha~1, generate
+  *Elset, elset=MatrixInst_SetJob_sh_23_Analysis_sh_23_Pha~1, generate
+  *Nset, nset=MatrixInst_SetMatrix, generate
+  *Elset, elset=MatrixInst_SetMatrix, generate
+  *Node
+  *Element, type=C3D10M
+  *Nset, nset=Phase2_1_SetPhase2_1, generate
+  *Elset, elset=Phase2_1_SetPhase2_1, generate
+  *System
+  *Node
+  *Node
+  *Node
+  *Nset, nset=Phase2, generate
+  *Elset, elset=Phase2, generate
+  *Nset, nset=allRVE, generate
+  *Nset, nset=allRVE, generate
+  *Elset, elset=allRVE, generate
+  *Elset, elset=allRVE, generate
+  *Nset, nset=point1
+  *Nset, nset=point2
+  *Nset, nset=point3
+  *Nset, nset=point4
+  *Nset, nset=point5
+  *Nset, nset=point6
+  *Nset, nset=point7
+  *Nset, nset=point8
+  *Nset, nset=refpoint4
+  *Nset, nset=refpoint5
+  *Nset, nset=refpoint6
+  *Nset, nset=xinf
+  *Elset, elset=xinf
+  *Nset, nset=xinfNoCorner
+  *Elset, elset=xinfNoCorner
+  *Nset, nset=xinfNoEdges, generate
+  *Elset, elset=xinfNoEdges
+  *Nset, nset=xparEdge1, generate
+  *Elset, elset=xparEdge1
+  *Nset, nset=xparEdge2, generate
+  *Elset, elset=xparEdge2
+  *Nset, nset=xparEdge3, generate
+  *Elset, elset=xparEdge3
+  *Nset, nset=xparEdge4, generate
+  *Elset, elset=xparEdge4
+  *Nset, nset=xsup
+  *Elset, elset=xsup
+  *Nset, nset=xsupNoCorner
+  *Elset, elset=xsupNoCorner
+  *Nset, nset=xsupNoEdges, generate
+  *Elset, elset=xsupNoEdges
+  *Nset, nset=yinf
+  *Elset, elset=yinf
+  *Nset, nset=yinfNoCorner
+  *Elset, elset=yinfNoCorner
+  *Nset, nset=yinfNoEdges, generate
+  *Elset, elset=yinfNoEdges
+  *Nset, nset=yinfNoXEdges
+  *Elset, elset=yinfNoXEdges
+  *Nset, nset=yinfNoZEdges
+  *Elset, elset=yinfNoZEdges
+  *Nset, nset=yparEdge1, generate
+  *Elset, elset=yparEdge1
+  *Nset, nset=yparEdge2, generate
+  *Elset, elset=yparEdge2
+  *Nset, nset=yparEdge3, generate
+  *Elset, elset=yparEdge3
+  *Nset, nset=yparEdge4, generate
+  *Elset, elset=yparEdge4
+  *Nset, nset=ysup
+  *Elset, elset=ysup
+  *Nset, nset=ysupNoCorner
+  *Elset, elset=ysupNoCorner
+  *Nset, nset=ysupNoEdges, generate
+  *Elset, elset=ysupNoEdges
+  *Nset, nset=ysupNoXEdges
+  *Elset, elset=ysupNoXEdges
+  *Nset, nset=ysupNoZEdges
+  *Elset, elset=ysupNoZEdges
+  *Nset, nset=zinf
+  *Elset, elset=zinf
+  *Nset, nset=zinfNoCorner
+  *Elset, elset=zinfNoCorner
+  *Nset, nset=zinfNoEdges, generate
+  *Elset, elset=zinfNoEdges
+  *Nset, nset=zinfNoXEdges
+  *Elset, elset=zinfNoXEdges
+  *Nset, nset=zinfNoYEdges
+  *Elset, elset=zinfNoYEdges
+  *Nset, nset=zparEdge1, generate
+  *Elset, elset=zparEdge1
+  *Nset, nset=zparEdge2, generate
+  *Elset, elset=zparEdge2
+  *Nset, nset=zparEdge3, generate
+  *Elset, elset=zparEdge3
+  *Nset, nset=zparEdge4, generate
+  *Elset, elset=zparEdge4
+  *Nset, nset=zsup
+  *Elset, elset=zsup
+  *Nset, nset=zsupNoCorner
+  *Elset, elset=zsupNoCorner
+  *Nset, nset=zsupNoEdges, generate
+  *Elset, elset=zsupNoEdges
+  *Nset, nset=zsupNoXEdges
+  *Elset, elset=zsupNoXEdges
+  *Nset, nset=zsupNoYEdges
+  *Elset, elset=zsupNoYEdges
+  *Elset, elset=_Matrix_1_S1
+  *Elset, elset=_Matrix_1_S2
+  *Elset, elset=_Matrix_1_S4
+  *Elset, elset=_Matrix_1_S3
+  *Elset, elset=_Surf_Phase2_1_S3
+  *Elset, elset=_Surf_Phase2_1_S2
+  *Elset, elset=_Surf_Phase2_1_S4
+  *Elset, elset=_Surf_Phase2_1_S1
+  *ncopy, change number = 26627, old set=xsupNoEdges, new set=xsupCopy, reflect=mirror
+  *ncopy, change number = 53254, old set=ysupNoEdges, new set=ysupCopy, reflect=mirror
+  *ncopy, change number = 79881, old set=zsupNoEdges, new set=zsupCopy, reflect=mirror
+  *ncopy, change number = 106508, old set=yparEdge1, new set=yparEdge1CopyTo2, reflect=mirror
+  *ncopy, change number = 133135, old set=yparEdge4, new set=yparEdge4CopyTo3, reflect=mirror
+  *ncopy, change number = 159762, old set=zparEdge3, new set=zparEdge3CopyTo2, reflect=mirror
+  *ncopy, change number = 186389, old set=zparEdge4, new set=zparEdge4CopyTo1, reflect=mirror
+  *ncopy, change number = 213016, old set=xparEdge3, new set=xparEdge3CopyTo2, reflect=mirror
+  *ncopy, change number = 239643, old set=xparEdge4, new set=xparEdge4CopyTo1, reflect=mirror
+  *ncopy, change number = 266270, old set=zparEdge1, new set=zparEdge1CopyTo2, reflect=mirror
+  *ncopy, change number = 292897, old set=zparEdge4, new set=zparEdge4CopyTo3, reflect=mirror
+  *ncopy, change number = 319524, old set=yparEdge3, new set=yparEdge3CopyTo2, reflect=mirror
+  *ncopy, change number = 346151, old set=yparEdge4, new set=yparEdge4CopyTo1, reflect=mirror
+  *ncopy, change number = 372778, old set=xparEdge2, new set=xparEdge2CopyTo1, reflect=mirror
+  *ncopy, change number = 399405, old set=xparEdge4, new set=xparEdge4CopyTo3, reflect=mirror
+  *Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie1, adjust=yes, type=SURFACE TO SURFACE
+  *Surface, type=ELEMENT, name=Matrix_1
+  *Surface, type=ELEMENT, name=Surf_Phase2_1
+  *surface, name=copySurfXinf, type=node
+  *surface, name=surfXinf, type=node
+  *surface, name=copySurfYinf, type=node
+  *surface, name=surfYinf, type=node
+  *surface, name=copySurfZinf, type=node
+  *surface, name=surfZinf, type=node
+  *surface, name=surfxparEdge1, type=node
+  *surface, name=surfxparEdge2, type=node
+  *surface, name=surfxparEdge3, type=node
+  *surface, name=surfxparEdge4, type=node
+  *surface, name=surfxparEdge3CopyTo2, type=node
+  *surface, name=surfxparEdge4CopyTo1, type=node
+  *surface, name=surfxparEdge2CopyTo1, type=node
+  *surface, name=surfxparEdge4CopyTo3, type=node
+  *surface, name=surfyparEdge1, type=node
+  *surface, name=surfyparEdge2, type=node
+
+ ***NOTE: DUE TO EXCESSIVE REPORTING, THE ECHO OF THE *SURFACE OPTION IS BEING 
+          SUPPRESSED.
+  *Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie1, adjust=yes, type=SURFACE TO SURFACE
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XSUPCOPY IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XINFNOEDGES IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YSUPCOPY IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YINFNOEDGES IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZSUPCOPY IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZINFNOEDGES IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XPAREDGE1 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XPAREDGE2 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XPAREDGE3 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XPAREDGE4 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XPAREDGE3COPYTO2 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XPAREDGE4COPYTO1 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XPAREDGE2COPYTO1 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             XPAREDGE4COPYTO3 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YPAREDGE1 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YPAREDGE2 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YPAREDGE3 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YPAREDGE4 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YPAREDGE1COPYTO2 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YPAREDGE4COPYTO3 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YPAREDGE3COPYTO2 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             YPAREDGE4COPYTO1 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZPAREDGE1 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZPAREDGE2 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZPAREDGE3 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZPAREDGE4 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE CONTACT 
+             AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A ZERO IS 
+             ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS USED IN A 
+             *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE CHECK 
+             THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZPAREDGE3COPYTO2 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZPAREDGE4COPYTO1 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZPAREDGE1COPYTO2 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+
+ ***WARNING: THE CONTACT AREA OR DISTRIBUTING WEIGHT ASSOCIATED WITH THE NSET 
+             ZPAREDGE4COPYTO3 IS ZERO OR NEGATIVE. A ONE IS ASSUMED FOR THE 
+             CONTACT AREA IF THIS SURFACE IS USED IN A CONTACT CALCULATION. A 
+             ZERO IS ASSUMED FOR DISTRIBUTING WEIGHT FACTOR IF THE SURFACE IS 
+             USED IN A *COUPLING OR *SHELL TO SOLID COUPLING DEFINITION. PLEASE 
+             CHECK THAT THIS IS APPROPRIATE.
+  *Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie1, adjust=yes, type=SURFACE TO SURFACE
+  *Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie1, adjust=yes, type=SURFACE TO SURFACE
+  *Orientation, name=Phase2_1-Ori-1
+  *Solid Section, elset=MatrixInst_SetJob_sh_23_Analysis_sh_23_Pha~1, material=matrix
+  *Solid Section, elset=Phase2_1_SetPhase2_1, orientation=Phase2_1-Ori-1, material=CF
+
+ ***WARNING: THE MODIFIED TETRAHEDRAL ELEMENTS ARE INCOMPATIBLE WITH THE 
+             REGULAR TETRAHEDRAL ELEMENTS IF THEY SHARE THE SAME NODES
+  *Material, name=CF
+  *Density
+  *Elastic, type=ENGINEERING CONSTANTS
+  *Material, name=matrix
+  *Density
+  *Elastic
+  *Orientation, name=Phase2_1-Ori-1
+  *Solid Section, elset=MatrixInst_SetJob_sh_23_Analysis_sh_23_Pha~1, material=matrix
+  *Solid Section, elset=Phase2_1_SetPhase2_1, orientation=Phase2_1-Ori-1, material=CF
+  *Boundary
+  *Boundary
+  *Boundary
+  *Boundary
+  *Boundary
+  *Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE COPYSURFXINF IS A NODE-BASED SURFACE USED WITH 
+             SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS 
+             ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE 
+             USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (COPYSURFXINF,SURFXINF) AND THE MASTER SURFACE DOES NOT HAVE 
+             ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED FOR 
+             CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE COPYSURFYINF IS A NODE-BASED SURFACE USED WITH 
+             SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS 
+             ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE 
+             USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (COPYSURFYINF,SURFYINF) AND THE MASTER SURFACE DOES NOT HAVE 
+             ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED FOR 
+             CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE COPYSURFZINF IS A NODE-BASED SURFACE USED WITH 
+             SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED STRESS 
+             ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE SHOULD BE 
+             USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (COPYSURFZINF,SURFZINF) AND THE MASTER SURFACE DOES NOT HAVE 
+             ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED FOR 
+             CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFXPAREDGE3COPYTO2 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFXPAREDGE3COPYTO2,SURFXPAREDGE2) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFXPAREDGE4COPYTO1 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFXPAREDGE4COPYTO1,SURFXPAREDGE1) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFXPAREDGE2COPYTO1 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFXPAREDGE2COPYTO1,SURFXPAREDGE1) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFXPAREDGE4COPYTO3 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFXPAREDGE4COPYTO3,SURFXPAREDGE3) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFYPAREDGE1COPYTO2 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFYPAREDGE1COPYTO2,SURFYPAREDGE2) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFYPAREDGE4COPYTO3 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFYPAREDGE4COPYTO3,SURFYPAREDGE3) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFYPAREDGE3COPYTO2 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFYPAREDGE3COPYTO2,SURFYPAREDGE2) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFYPAREDGE4COPYTO1 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFYPAREDGE4COPYTO1,SURFYPAREDGE1) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFZPAREDGE3COPYTO2 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFZPAREDGE3COPYTO2,SURFZPAREDGE2) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFZPAREDGE4COPYTO1 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFZPAREDGE4COPYTO1,SURFZPAREDGE1) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFZPAREDGE1COPYTO2 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFZPAREDGE1COPYTO2,SURFZPAREDGE2) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+
+ ***WARNING: SLAVE SURFACE SURFZPAREDGE4COPYTO3 IS A NODE-BASED SURFACE USED 
+             WITH SURFACE TO SURFACE APPROACH.  IN ORDER TO OBTAIN IMPROVED 
+             STRESS ACCURACY WITH THIS APPROACH, AN ELEMENT-BASED SURFACE 
+             SHOULD BE USED INSTEAD.
+
+ ***WARNING: IF SIGNIFICANT CLEARANCE/OVERCLOSURE EXISTS BETWEEN SURFACE PAIR 
+             (SURFZPAREDGE4COPYTO3,SURFZPAREDGE3) AND THE MASTER SURFACE DOES 
+             NOT HAVE ROTATIONAL DEGREES OF FREEDOM, ADJUSTMENT IS RECOMMENDED 
+             FOR CORRECT ENFORCEMENT OF THE TIE CONSTRAINT
+  *Tie, name=Tie1, adjust=yes, type=SURFACE TO SURFACE
+
+
+  SLAVE : SURF_PHASE2_1                                                                   
+  MASTER: MATRIX_1                                                                        
+              DISTANCE
+   NODE       ADJUSTED    REMARKS/WARNINGS
+
+      8734   6.94082E-04  ADJUSTED TO ( 0.95483    , 0.90629    , 0.46231    ).
+      8849   6.94068E-04  ADJUSTED TO ( 0.76005    , 0.32225    , 0.12495    ).
+      8851   6.94068E-04  ADJUSTED TO ( 0.76005    , 0.34764    , 0.12495    ).
+      9035   6.94074E-04  ADJUSTED TO ( 0.62418    , 0.88090    , 6.08362E-02).
+      9037   6.94074E-04  ADJUSTED TO ( 0.62418    , 0.90629    , 6.08362E-02).
+      9193   6.94084E-04  ADJUSTED TO ( 0.40020    , 0.42382    , 0.94534    ).
+      9195   6.94084E-04  ADJUSTED TO ( 0.40020    , 0.44921    , 0.94534    ).
+      9403   6.94084E-04  ADJUSTED TO ( 0.40020    , 0.50000    , 0.94534    ).
+      9444   6.94084E-04  ADJUSTED TO ( 0.40020    , 0.39843    , 0.94534    ).
+      9500   6.94060E-04  ADJUSTED TO ( 0.67174    , 0.75393    , 7.71629E-02).
+      9504   6.94060E-04  ADJUSTED TO ( 0.67174    , 0.72854    , 7.71629E-02).
+      9673   6.94085E-04  ADJUSTED TO ( 0.73900    , 0.52539    , 0.88880    ).
+      9675   6.94085E-04  ADJUSTED TO ( 0.73900    , 0.50000    , 0.88880    ).
+      9726   6.94034E-04  ADJUSTED TO ( 0.35181    , 0.27146    , 0.93166    ).
+      9728   6.94034E-04  ADJUSTED TO ( 0.35181    , 0.29685    , 0.93166    ).
+      9882   6.94068E-04  ADJUSTED TO ( 4.37892E-02, 0.65236    , 0.51258    ).
+      9886   6.94068E-04  ADJUSTED TO ( 4.37892E-02, 0.62697    , 0.51258    ).
+      9984   6.94085E-04  ADJUSTED TO ( 0.73900    , 0.65236    , 0.88880    ).
+     10002   6.94070E-04  ADJUSTED TO ( 0.57512    , 0.85551    , 4.98404E-02).
+     10063   6.94069E-04  ADJUSTED TO ( 0.10476    , 0.90629    , 0.27181    ).
+
+
+
+
+ ***WARNING: FOR *TIE PAIR (SURF_PHASE2_1-MATRIX_1), NOT ALL THE NODES THAT 
+             HAVE BEEN ADJUSTED WERE PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR 
+             COMPLETE PRINTOUT.
+
+ ***WARNING: FOR *TIE PAIR (SURF_PHASE2_1-MATRIX_1), ADJUSTED NODES WITH VERY 
+             SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES 
+             FOR COMPLETE PRINTOUT.
+  *Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie1, adjust=yes, type=SURFACE TO SURFACE
+  *Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie1, adjust=yes, type=SURFACE TO SURFACE
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+  *Equation
+
+ ***NOTE: DUE TO EXCESSIVE REPORTING, THE ECHO OF THE *MPC and *EQUATION 
+          OPTIONS IS BEING SUPPRESSED.
+  *Solid Section, elset=MatrixInst_SetJob_sh_23_Analysis_sh_23_Pha~1, material=matrix
+  *Solid Section, elset=Phase2_1_SetPhase2_1, orientation=Phase2_1-Ori-1, material=CF
+  *Tie, name=Tie-X, tied nset=xsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Y, tied nset=ysupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie-Z, tied nset=zsupCopy, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX1, tied nset=xparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX2, tied nset=xparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX3, tied nset=xparEdge2CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieX4, tied nset=xparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY1, tied nset=yparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY2, tied nset=yparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY3, tied nset=yparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieY4, tied nset=yparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ1, tied nset=zparEdge3CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ2, tied nset=zparEdge4CopyTo1, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ3, tied nset=zparEdge1CopyTo2, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=TieZ4, tied nset=zparEdge4CopyTo3, adjust=no, type=SURFACE TO SURFACE
+  *Tie, name=Tie1, adjust=yes, type=SURFACE TO SURFACE
+  *Output, field
+  *Output, history, variable=PRESELECT
+  *Element Output, directions=YES
+  *Output, field
+  *Output, history, variable=PRESELECT
+  *Element Output, directions=YES
+  *Output, field
+  *Output, history, variable=PRESELECT
+  *Element Output, directions=YES
+
+ ***WARNING: MPCS (EXTERNAL or INTERNAL, including those generated from rigid 
+             body definitions), KINEMATIC COUPLINGS, AND/OR EQUATIONS WILL 
+             ACTIVATE ADDITIONAL DEGREES OF FREEDOM
+  *Step, name=Step-1, nlgeom=NO, inc=2
+  *Output, field
+  *Output, history, variable=PRESELECT
+  *Step, name=Step-1, nlgeom=NO, inc=2
+  *Step, name=Step-1, nlgeom=NO, inc=2
+  *Static
+  *Boundary
+  *Boundary
+  *Boundary
+  *Boundary
+  *Output, field
+  *Node Output
+  *Element Output, directions=YES
+  *Output, history, variable=PRESELECT
+  *End Step
+  *Boundary
+  *Step, name=Step-1, nlgeom=NO, inc=2
+  *Static
+  *Boundary
+  *Boundary
+  *Boundary
+  *Boundary
+  *End Step
+  
+                               E L E M E N T   Q U A L I T Y  C H E C K S        
+  
+  
+ ***NOTES: DISTORTED ISOPARAMETRIC ELEMENTS: ANGLE BETWEEN ISOPARAMETRIC LINES 
+           IS LESS THAN 45 DEGREES OR GREATER THAN 135 DEGREES.
+  
+           TETRAHEDRAL QUALITY MEASURE: VOLUME OF TETRAHEDRON DIVIDED BY THE 
+           VOLUME OF EQUILATERAL TETRAHEDRON WITH SAME CIRCUMSPHERE RADIUS; 
+           0 FOR DEGENERATE TETRAHEDRON AND 1 FOR EQUILATERIAL TETRAHEDRON. IT 
+           IS RECOMMENDED THAT THE TETRAHEDRAL QUALITY MEASURE BE GREATER THAN 
+           0.02, THE MIN INTERIOR (DIHEDRAL) ANGLE BE GREATER THAN 10 DEGREES, 
+           AND THE MAX INTERIOR (DIHEDRAL) ANGLE BE LESS THAN 160 DEGREES. 
+  
+           MODIFIED TETRAHEDRAL QUALITY MEASURE: ANGLES BETWEEN THE TWO LINE 
+           SEGMENTS ON EACH EDGE; THE EDGES OF MODIFIED TETRAHEDRAL SHOULD BE 
+           AS STRAIGHT AS POSSIBLE. IT IS RECOMMENDED THAT THE ANGLE BETWEEN 
+           THE TWO LINE SEGMENTS ON EACH EDGE IS BETWEEN 160 AND 180 DEGREES. 
+  
+           TRIANGULAR QUALITY MEASURE: AREA OF TRIANGLE DIVIDED BY THE AREA OF 
+           EQUILATERAL TRIANGLE WITH SAME CIRCUMCIRCLE RADIUS; 0 FOR DEGENERATE 
+           TRIANGLE AND 1 FOR EQUILATERAL TRIANGLE. IT IS RECOMMENDED THAT THE
+           TRIANGULAR QUALITY MEASURE BE GREATER THAN 0.01, THE MIN INTERIOR 
+           ANGLE BE GREATER THAN 10 DEGREES, AND THE MAX INTERIOR ANGLE BE LESS 
+           THAN 160 DEGREES. 
+  
+           NODAL ADJUSTMENTS ARISING FROM CONTACT INTERACTIONS AND/OR TIE 
+           CONSTRAINTS CAN CAUSE SEVERE ELEMENT DISTORTION. IT MAY BE NECESSARY 
+           TO REMESH IN ORDER TO REDUCE THE AMOUNT OF ADJUSTMENT. 
+
+ ***WARNING: 1 elements are distorted. Either the isoparametric angles are out 
+             of the suggested limits or the triangular or tetrahedral quality 
+             measure is bad. The elements have been identified in element set 
+             WarnElemDistorted.
+  
+ --------------------------------------------------------------------------------
+ Distorted tetrahedral elements
+  
+  Element  Quality measure     Min angle        Max angle     Adjusted nodes 
+ --------- ---------------- ---------------- ---------------- -------------- 
+     14630        0.0137536          23.6251          157.458       NO       
+  
+
+ ***WARNING: DEGREE OF FREEDOM 4 IS NOT ACTIVE ON NODE 7 - THIS BOUNDARY 
+             CONDITION IS IGNORED
+
+ ***WARNING: DEGREE OF FREEDOM 5 IS NOT ACTIVE ON NODE 7 - THIS BOUNDARY 
+             CONDITION IS IGNORED
+
+ ***WARNING: DEGREE OF FREEDOM 6 IS NOT ACTIVE ON NODE 7 - THIS BOUNDARY 
+             CONDITION IS IGNORED
+
+ ***WARNING: Boundary conditions are specified on inactive dof of 1 nodes. The 
+             nodes have been identified in node set WarnNodeBCInactiveDof.
+
+
+
+                            P R O B L E M   S I Z E
+
+
+          NUMBER OF ELEMENTS IS                                 36154
+          NUMBER OF ELEMENTS DEFINED BY THE USER AND *TIE       34843
+          NUMBER OF NODES IS                                    40916
+          NUMBER OF NODES DEFINED BY THE USER                   27841
+          NUMBER OF INTERNAL NODES GENERATED BY THE PROGRAM     13075
+          TOTAL NUMBER OF VARIABLES IN THE MODEL               126681
+          (DEGREES OF FREEDOM PLUS MAX NO. OF ANY LAGRANGE MULTIPLIER
+           VARIABLES. INCLUDE *PRINT,SOLVE=YES TO GET THE ACTUAL NUMBER.)
+
+
+
+                              END OF USER INPUT PROCESSING
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =   2.7000    
+       SYSTEM TIME (SEC)    =  0.20000    
+       TOTAL CPU TIME (SEC) =   2.9000    
+       WALLCLOCK TIME (SEC) =          4
+1
+
+   Abaqus 6.14-1                                  Date 31-Aug-2020   Time 22:54:04
+   For use by Supplied By SSQ under license from Dassault Systemes or its subsidiary.
+
+                                                                                               STEP    1  INCREMENT    1
+                                                                                          TIME COMPLETED IN THIS STEP   0.00    
+
+
+                        S T E P       1     S T A T I C   A N A L Y S I S
+
+
+                                                                                          
+
+     AUTOMATIC TIME CONTROL WITH -
+          A SUGGESTED INITIAL TIME INCREMENT OF                 1.00    
+          AND A TOTAL TIME PERIOD OF                            1.00    
+          THE MINIMUM TIME INCREMENT ALLOWED IS                0.100    
+          THE MAXIMUM TIME INCREMENT ALLOWED IS                 1.00    
+
+     LINEAR EQUATION SOLVER TYPE         DIRECT SPARSE
+  
+                   M E M O R Y   E S T I M A T E
+  
+ PROCESS      FLOATING PT       MINIMUM MEMORY        MEMORY TO
+              OPERATIONS           REQUIRED          MINIMIZE I/O
+             PER ITERATION           (MB)               (MB)
+  
+     1         1.12E+011              137                754
+  
+ NOTE:
+      (1) SINCE ABAQUS DOES NOT PRE-ALLOCATE MEMORY AND ONLY ALLOCATES MEMORY AS NEEDED DURING THE ANALYSIS,
+          THE MEMORY REQUIREMENT PRINTED HERE CAN ONLY BE VIEWED AS A GENERAL GUIDELINE BASED ON THE BEST
+          KNOWLEDGE AVAILABLE AT THE BEGINNING OF A STEP BEFORE THE SOLUTION PROCESS HAS BEGUN.
+      (2) THE ESTIMATE IS NORMALLY UPDATED AT THE BEGINNING OF EVERY STEP. IT IS THE MAXIMUM VALUE OF THE
+          ESTIMATE FROM THE CURRENT STEP TO THE LAST STEP OF THE ANALYSIS, WITH UNSYMMETRIC SOLUTION TAKEN
+          INTO ACCOUNT IF APPLICABLE. 
+      (3) SINCE THE ESTIMATE IS BASED ON THE ACTIVE DEGREES OF FREEDOM IN THE FIRST ITERATION OF THE 
+          CURRENT STEP, THE MEMORY ESTIMATE MIGHT BE SIGNIFICANTLY DIFFERENT THAN ACTUAL USAGE FOR 
+          PROBLEMS WITH SUBSTANTIAL CHANGES IN ACTIVE DEGREES OF FREEDOM BETWEEN STEPS (OR EVEN WITHIN
+          THE SAME STEP). EXAMPLES ARE: PROBLEMS WITH SIGNIFICANT CONTACT CHANGES, PROBLEMS WITH MODEL
+          CHANGE, PROBLEMS WITH BOTH STATIC STEP AND STEADY STATE DYNAMIC PROCEDURES WHERE ACOUSTIC 
+          ELEMENTS WILL ONLY BE ACTIVATED IN THE STEADY STATE DYNAMIC STEPS.
+      (4) FOR MULTI-PROCESS EXECUTION, THE ESTIMATED VALUE OF FLOATING POINT OPERATIONS FOR EACH PROCESS
+          IS BASED ON AN INITIAL SCHEDULING OF OPERATIONS AND MIGHT NOT REFLECT THE ACTUAL FLOATING 
+          POINT OPERATIONS COMPLETED ON EACH PROCESS. OPERATIONS ARE DYNAMICALLY BALANCED DURING EXECUTION, 
+          SO THE ACTUAL BALANCE OF OPERATIONS BETWEEN PROCESSES IS EXPECTED TO BE BETTER THAN THE ESTIMATE
+          PRINTED HERE.
+      (5) THE UPPER LIMIT OF MEMORY THAT CAN BE ALLOCATED BY ABAQUS WILL IN GENERAL DEPEND ON THE VALUE OF
+          THE "MEMORY" PARAMETER AND THE AMOUNT OF PHYSICAL MEMORY AVAILABLE ON THE MACHINE. PLEASE SEE
+          THE "ABAQUS ANALYSIS USER'S MANUAL" FOR MORE DETAILS. THE ACTUAL USAGE OF MEMORY AND OF DISK
+          SPACE FOR SCRATCH DATA WILL DEPEND ON THIS UPPER LIMIT AS WELL AS THE MEMORY REQUIRED TO MINIMIZE
+          I/O. IF THE MEMORY UPPER LIMIT IS GREATER THAN THE MEMORY REQUIRED TO MINIMIZE I/O, THEN THE ACTUAL
+          MEMORY USAGE WILL BE CLOSE TO THE ESTIMATED "MEMORY TO MINIMIZE I/O" VALUE, AND THE SCRATCH DISK
+          USAGE WILL BE CLOSE-TO-ZERO; OTHERWISE, THE ACTUAL MEMORY USED WILL BE CLOSE TO THE PREVIOUSLY
+          MENTIONED MEMORY LIMIT, AND THE SCRATCH DISK USAGE WILL BE ROUGHLY PROPORTIONAL TO THE DIFFERENCE
+          BETWEEN THE ESTIMATED "MEMORY TO MINIMIZE I/O" AND THE MEMORY UPPER LIMIT. HOWEVER ACCURATE
+          ESTIMATE OF THE SCRATCH DISK SPACE IS NOT POSSIBLE.
+      (6) USING "*RESTART, WRITE" CAN GENERATE A LARGE AMOUNT OF DATA WRITTEN IN THE WORK DIRECTORY.
+
+
+          THE ANALYSIS HAS BEEN COMPLETED
+
+
+
+                              ANALYSIS COMPLETE
+                              WITH     69 WARNING MESSAGES ON THE DAT FILE
+
+
+
+     JOB TIME SUMMARY
+       USER TIME (SEC)      =   11.700    
+       SYSTEM TIME (SEC)    =  0.40000    
+       TOTAL CPU TIME (SEC) =   12.100    
+       WALLCLOCK TIME (SEC) =         14
