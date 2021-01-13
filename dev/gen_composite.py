@@ -5,6 +5,7 @@ import shutil
 
 class gen_composite:
     def gen_part(self, path, thick, seq):
+       print("Generating composite part")
        fname = "part_composite.k"
        name = os.path.join(path,fname)
        fo = open(name,"w")
@@ -33,6 +34,7 @@ class gen_composite:
            else:
                 continue
     def gen_mat(self,path,ro, e_axial, e_trans,pr_axial, pr_trans, g_in, g_out,shear_str_in,ten_str_axial,ten_str_trans,comp_str_trans):
+          print("Generating mat composite")
           fname = "mat_composite.k"
           name = os.path.join(path,fname)
           fo = open(name,"w")
